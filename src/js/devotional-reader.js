@@ -14,8 +14,9 @@ class DevotionalReader {
 
     async loadDevotional(date) {
         try {
+            const base = import.meta.env.BASE_URL || "/";
             const response = await fetch(
-                `/devotionals/${date.format("YYYY-MM-DD")}.md`,
+                `${base}devotionals/${date.format("YYYY-MM-DD")}.md`,
                 {
                     headers: {
                         Accept: "text/markdown",
